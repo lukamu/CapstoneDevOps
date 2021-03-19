@@ -19,7 +19,7 @@ In this project I applied the skills and knowledge which were developed througho
 
 ## Project walkthrough Steps
 
-### Create on EC2 an Ubuntu Server
+### Create on EC2 an Ubuntu Server (Screenshot 1 till Screenshot 9)
 
 I used an Ubuntu v20, and referenced this tutorial for Jenkins installation: https://www.journaldev.com/33965/install-jenkins-on-ubuntu
 
@@ -46,10 +46,30 @@ sudo apt install jenkins
 
 sudo systemctl status jenkins
 
-#### Step 6: Allow incoming connections into Jenkins
+#### Step 6: Allow incoming connections into Jenkins and install tidy
 
 sudo ufw allow 8080
+sudo apt install tidy
 
-#### Step 7: Visit the Jenkins Server on the Browser
+### Created Jenkins pipeline
 
-http://ec2-3-15-154-201.us-east-2.compute.amazonaws.com:8080
+I created a Jenkinse pipeline. The result of the pipeline: Screenshot 11 - Jenkis pipeline
+I pushed the created docker image on Docker Hub: Screenshot 10 - DockerHub Repository
+
+### Code is checked against a linter as part of a Continuous Integration step (demonstrated w/ two screenshots)
+
+Screenshot 11b - Lint
+
+### The project performs the correct steps to do a blue/green or a rolling deployment into the environment selected. Student demonstrates the successful completion of chosen deployment methodology with screenshots.
+
+Screenshot 12b - blue/green
+
+Check Screenshot
+
+### Test the website
+
+I took the ip address from the Loadbalancer: Screenshot 12 - Load Balancer
+I tested the Web App: Screenshot 13 - Test Web App
+
+You can also test the app using this link:
+http://a190749029db54eea98afcfbeb9c8974-1535868717.us-east-2.elb.amazonaws.com:8000
